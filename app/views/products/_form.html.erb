@@ -1,10 +1,10 @@
 <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3>
-              </div>
+               <div class="card-header">
+                <!-- <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3> -->
+              </div> 
 
 <!-- form start -->
-              <form id="quickForm">
+              <%= form_with(model: product) do |form| %>
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputName">Name</label> 
@@ -43,4 +43,5 @@
                 </div>
               </form>
             </div>
+            <%end%>
             <!-- /.card -->
