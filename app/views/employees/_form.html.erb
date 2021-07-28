@@ -1,32 +1,27 @@
-<%= form_with(model: employee) do |form| %>
-  <% if employee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+<div class="card card-primary">
+               <div class="card-header">
+                <!-- <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3> -->
+              </div> 
 
-      <ul>
-        <% employee.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :type_function %>
-    <%= form.number_field :type_function %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<!-- form start -->
+            
+                    <%= form_with(model: employee) do |f| %>
+                    <div class="card-body">
+                      <p class="form-group">
+                        <%= f.label :Name %>
+                        <%= f.text_field :name, autofocus: true, class:"form-control" %>
+                      </p>
+                      <p class="form-group">
+                        <%= f.label :Type_Function %>
+                        <%= f.text_field :type_function, autofocus: true, class:"form-control" %>
+                      </p>
+                      <p class="form-group">
+                        <%= f.label :Status %>
+                        <%= f.text_field :status, autofocus: true, class:"form-control" %>
+                      </p>
+                        <%= f.submit class:'btn btn-primary' %>
+                        <!-- <%= link_to 'Cancelar', root_path, class: 'btn btn-default'%> -->
+                      </p>
+                    <% end %>
+                    <!-- <input type="Name" name="Name" class="form-control" id="exampleInputName" placeholder="Name"> -->
+                  </div>

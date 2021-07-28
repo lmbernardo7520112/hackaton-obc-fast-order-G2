@@ -4,19 +4,51 @@
               </div> 
 
 <!-- form start -->
-              <%= form_with(model: product) do |form| %>
+              <!-- <%= form_with(model: product) do |form| %>
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputName">Name</label> 
                     <%= form.text_field :name, input_html: {class: "form-control", id: "exampleInputName", placeholder: "Name"} do |f| %>
-                    <%end%>
+                    <%end%> -->
+
+                    <%= form_with(model: product) do |f| %>
+                    <div class="card-body">
+                      <p class="form-group">
+                        <%= f.label :Nome %>
+                        <%= f.text_field :name, autofocus: true, class:"form-control" %>
+                      </p>
+                      <p class="form-group">
+                        <%= f.label :Description %>
+                        <%= f.text_field :description, autofocus: true, class:"form-control" %>
+                      </p>
+                      <p class="form-group">
+                        <%= f.label :Category_id %>
+                        <%= f.text_field :category_id, autofocus: true, class:"form-control" %>
+                      </p>
+                      <p class="form-group">
+                        <%= f.label :Price %>
+                        <%= f.text_field :price, autofocus: true, class:"form-control" %>
+                      </p>
+                      <p class="form-group">
+                        <%= f.label :Time %>
+                        <%= f.text_field :time, autofocus: true, class:"form-control" %>
+                      </p>
+                      <p class="form-group">
+                        <%= f.label :Status %>
+                        <%= f.text_field :status, autofocus: true, class:"form-control" %>
+                      </p>
+                      <p>
+                        <%= f.submit class:'btn btn-primary' %>
+                        <!-- <%= link_to 'Cancelar', root_path, class: 'btn btn-default'%> -->
+                      </p>
+                    <% end %>
                     <!-- <input type="Name" name="Name" class="form-control" id="exampleInputName" placeholder="Name"> -->
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="exampleInputPassword">Description</label>
                     <%= form.text_field :description, input_html: {:class => "form-control", :id=>"exampleInputPassword", :placeholder => "Description"} %>
-                    <!-- <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
-                  </div>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div> 
                   <div class="form-group">
                     <label for="exampleInputCategory">Category_id</label>
                     <input type="category" name="category" class="form-control" id="exampleInputCategory" placeholder="Category">
@@ -40,11 +72,11 @@
                     </div>
                   </div>
                 </div>
-                <!-- /.card-body -->
+                 /.card-body 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
             </div>
-            <%end%>
-            <!-- /.card -->
+            <%end%> 
+             /.card -->
