@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_26_230222) do
+ActiveRecord::Schema.define(version: 2021_07_29_172620) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,37 @@ ActiveRecord::Schema.define(version: 2021_07_26_230222) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "histories", force: :cascade do |t|
+    t.integer "issue_id", null: false
+    t.integer "history_id"
+    t.datetime "created_on"
+    t.string "action"
+    t.string "description"
+    t.string "creator"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["issue_id"], name: "index_histories_on_issue_id"
+  end
+
+  create_table "issues", force: :cascade do |t|
+    t.integer "project_id", null: false
+    t.integer "order_number"
+    t.string "title"
+    t.string "description"
+    t.datetime "created_on"
+    t.datetime "last_updated_on"
+    t.string "last_updater"
+    t.string "tester"
+    t.string "fixer"
+    t.string "creator"
+    t.string "priority"
+    t.string "status"
+    t.date "due_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_issues_on_project_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -60,6 +91,15 @@ ActiveRecord::Schema.define(version: 2021_07_26_230222) do
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.integer "project_id"
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "histories", "issues"
+  add_foreign_key "issues", "projects"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "employees"

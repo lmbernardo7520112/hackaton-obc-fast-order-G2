@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'issues/index'
+  get 'issues/show'
   resources :order_items
   resources :orders
   resources :employees
