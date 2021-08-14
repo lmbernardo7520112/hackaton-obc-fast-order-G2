@@ -1,37 +1,32 @@
-<%= form_with(model: order) do |form| %>
-  <% if order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+<div class="card card-primary">
+               <div class="card-header">
+                <!-- <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3> -->
+              </div> 
 
-      <ul>
-        <% order.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :order_date %>
-    <%= form.datetime_select :order_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :client_name %>
-    <%= form.text_field :client_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :number_table %>
-    <%= form.text_field :number_table %>
-  </div>
-
-  <div class="field">
-    <%= form.label :employee_id %>
-    <%= form.text_field :employee_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<!-- form start -->
+            
+                    <%= form_with(model: order) do |f| %>
+                    <div class="card-body">
+                      <p class="form-group">
+                        <%= f.label :Order_Date %>
+                        <%= f.text_field :order_date, autofocus: true, class:"form-control" %>
+                      </p>
+                      <p class="form-group">
+                        <%= f.label :Client_Name %>
+                        <%= f.text_field :client_name, autofocus: true, class:"form-control" %>
+                      </p>
+                      <p class="form-group">
+                        <%= f.label :Number_Table %>
+                        <%= f.text_field :number_table, autofocus: true, class:"form-control" %>
+                      </p>
+                      <p class="form-group">
+                        <%= f.label :Employee_Id %>
+                        <%= f.text_field :employee_id, autofocus: true, class:"form-control" %>
+                      </p>
+                      <p>
+                        <%= f.submit class:'btn btn-primary' %>
+                        <!-- <%= link_to 'Cancelar', root_path, class: 'btn btn-default'%> -->
+                      </p>
+                    <% end %>
+                    <!-- <input type="Name" name="Name" class="form-control" id="exampleInputName" placeholder="Name"> -->
+                  </div>

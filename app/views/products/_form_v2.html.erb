@@ -1,0 +1,42 @@
+<div class="card card-primary">
+  <div class="card-header">
+    <!-- <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3> -->
+  </div> 
+
+<!-- form start -->
+              <%= form_with(model: product) do |form| %>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputName">Name</label> 
+                    <%= form.text_field :client_name, input_html: {:class => "form-control", :id=>"exampleInputName", :placeholder => "Name"} %>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Description</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputCategory">Category_id</label>
+                    <input type="category" name="category" class="form-control" id="exampleInputCategory" placeholder="Category">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPrice">Price</label>
+                    <input type="price" name="price" class="form-control" id="exampleInputPrice" placeholder="Price">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputTime">Time</label>
+                    <input type="time" name="time" class="form-control" id="exampleInputTime" placeholder="Time">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputStatus">Status</label>
+                    <input type="status" name="status" class="form-control" id="exampleInputstatus" placeholder="Status">
+                  </div>
+
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <%end%>
+            <!-- /.card -->
